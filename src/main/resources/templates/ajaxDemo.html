@@ -36,12 +36,14 @@
 		                                             <label class="control-label col-md-3">Employee ID:</label>
 		                                             <div class="col-md-4">
 		                                                 <select class="bs-select form-control" id="employeeIdSelect" onchange="employeeSelect()">
+		                                                     <option value="default" selected="true">- SELECT -</option>
 		                                                     <option value="A552">A552</option>
 		                                                     <option value="B112">B112</option>
 		                                                     <option value="C997">C997</option>
 		                                                     <option value="A703">A703</option>
 		                                                 </select>
 		                                             </div>
+		                                             <div class="col-md-4" id="ajaxLoader" style="padding-top:4px;display:none"><img th:src="@{/images/ajaxLoader.gif}"/></div>
 		                                         </div>
 		                                      </div>
 		                                  </form>
@@ -60,11 +62,11 @@
                                 <div class="profile-sidebar">
                                     <div class="portlet light profile-sidebar-portlet ">
                                         <div class="profile-userpic">
-                                            <img th:src="@{/images/darthvader.jpg}" class="img-responsive" alt=""/> 
+                                            <img th:src="@{/images/darthvader.jpg}" class="img-responsive" alt="" id="employeePic"/> 
                                         </div>
                                         <div class="profile-usertitle">
-                                            <div class="profile-usertitle-name"> Marcus Doe </div>
-                                            <div class="profile-usertitle-job"> Developer </div>
+                                            <div class="profile-usertitle-name" id="employeeName"> Marcus Doe </div>
+                                            <div class="profile-usertitle-job" id="employeeDepartment"> Developer </div>
                                         </div>
                                     </div>
                                 </div>
@@ -80,32 +82,21 @@
                                                 </div>
                                                 <div class="portlet-body">
                                                      <form role="form" action="#">
+                                                     	<div class="form-group">
+                                                             <label class="control-label">Employee ID</label>
+                                                             <input type="text" class="form-control" disabled="true" id="employeeId"/> </div>
                                                          <div class="form-group">
                                                              <label class="control-label">First Name</label>
-                                                             <input type="text" placeholder="John" class="form-control" /> </div>
+                                                             <input type="text" class="form-control" disabled="true" id="employeeFirstName"/> </div>
                                                          <div class="form-group">
                                                              <label class="control-label">Last Name</label>
-                                                             <input type="text" placeholder="Doe" class="form-control" /> </div>
+                                                             <input type="text" class="form-control" disabled="true" id="employeeLastName"/> </div>
                                                          <div class="form-group">
-                                                             <label class="control-label">Mobile Number</label>
-                                                             <input type="text" placeholder="+1 646 580 DEMO (6284)" class="form-control" /> </div>
+                                                             <label class="control-label">Department</label>
+                                                             <input type="text" class="form-control" disabled="true" id="employeeDept"/> </div>
                                                          <div class="form-group">
-                                                             <label class="control-label">Interests</label>
-                                                             <input type="text" placeholder="Design, Web etc." class="form-control" /> </div>
-                                                         <div class="form-group">
-                                                             <label class="control-label">Occupation</label>
-                                                             <input type="text" placeholder="Web Developer" class="form-control" /> </div>
-                                                         <div class="form-group">
-                                                             <label class="control-label">About</label>
-                                                             <textarea class="form-control" rows="3" placeholder="We are KeenThemes!!!"></textarea>
-                                                         </div>
-                                                         <div class="form-group">
-                                                             <label class="control-label">Website Url</label>
-                                                             <input type="text" placeholder="http://www.mywebsite.com" class="form-control" /> </div>
-                                                         <div class="margiv-top-10">
-                                                             <a href="javascript:;" class="btn green"> Save Changes </a>
-                                                             <a href="javascript:;" class="btn default"> Cancel </a>
-                                                         </div>
+                                                             <label class="control-label">Hours/Week</label>
+                                                             <input type="text" class="form-control" disabled="true" id="employeeHours"/> </div>
                                                      </form>
                                                 </div>
                                             </div>
