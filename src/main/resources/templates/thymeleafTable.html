@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!--<![endif]-->
+
+    <head>
+        <title>Thymeleaf Table | Carey Development Demos</title>
+        <meta content="Twitter login demo" name="description" />
+        <object th:include="/fragments/head :: head" th:remove="tag"></object>
+    </head>
+
+    <body class="page-container-bg-solid">
+		<div th:include="fragments/topmenuheader :: header"></div>
+        <div class="page-container">
+            <div class="page-content-wrapper">
+                <div class="page-head" style="background-color:#eff3f8;padding-top:40px">
+                    <div class="container">
+                        <div class="row">
+	                        <div class="col-md-12" style="text-align:left">
+	                        	<h3 style="margin-bottom:50px">Believe it or not, this is hard to do in Thymeleaf!</h3>
+	             				<div class="portlet box blue">
+                                    <div class="portlet-title">
+                                        <div class="caption">
+                                            <i class="fa fa-home"></i>Thymeleaf Table </div>
+                                        <div class="tools">
+                                            <a href="javascript:;" class="collapse"> </a>
+                                            <a href="#portlet-config" data-toggle="modal" class=" "> </a>
+                                        </div>
+                                    </div>
+                                    <div class="portlet-body">
+                                    	<div th:each="data, row: ${list}" th:with="numList=${ {2,1,0} }" th:if="${row.count % 3 == 0 or row.last}" style="text-align:center" class="row">
+										    <div class="col-md-4 col-sm-4" style="margin-bottom:30px" th:each="num : ${numList}" th:with="dataIndex=(${row.index} - ${num})" th:if="${row.count % 3 == 0}">
+									    		<span style="fontSize:10pt" th:utext="${list[dataIndex]}"></span>
+										    </div>
+										    <div class="col-md-4 col-sm-4" style="margin-bottom:30px" th:each="num : ${numList}" th:with="dataIndex=(${row.index} - ${num})" th:if="${row.last} and ${row.count % 3 != 0} and ${num &lt; row.count % 3}">
+									    		<span style="fontSize:10pt" th:utext="${list[dataIndex]}"></span>
+										    </div>
+										</div>
+                                    </div>
+	             				</div>
+	                        </div>
+                   		</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div th:include="fragments/homefooter :: footer"></div>
+    </body>
+</html>
