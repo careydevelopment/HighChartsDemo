@@ -46,7 +46,7 @@ function populateEmployeeInfo(data) {
 		$('#employeeHours').val(hoursPerWeek);
 		
 		//show the hidden elements
-		$('#profileRow').show();
+		$('#profileRow').css('visibility','visible');
 	}
 	
 	//hide the spinner again
