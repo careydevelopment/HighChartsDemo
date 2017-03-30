@@ -78,6 +78,7 @@ public class EmployeeRestController {
 		emp1.setFirstName("Danny");
 		emp1.setLastName("DeVito");
 		emp1.setHoursPerWeek(40);
+		emp1.setImageFile("dannydevito.jpg");
 		allEmployees.add(emp1);
 		
 		Employee emp2 = new Employee();
@@ -86,6 +87,7 @@ public class EmployeeRestController {
 		emp2.setFirstName("Darth");
 		emp2.setLastName("Vader");
 		emp2.setHoursPerWeek(30);
+		emp2.setImageFile("darthvader.jpg");
 		allEmployees.add(emp2);
 		
 		Employee emp3 = new Employee();
@@ -94,6 +96,7 @@ public class EmployeeRestController {
 		emp3.setFirstName("Roger");
 		emp3.setLastName("Rabbit");
 		emp3.setHoursPerWeek(40);
+		emp3.setImageFile("rogerrabbit.jpg");
 		allEmployees.add(emp3);
 
 		Employee emp4 = new Employee();
@@ -102,6 +105,7 @@ public class EmployeeRestController {
 		emp4.setFirstName("John");
 		emp4.setLastName("Legend");
 		emp4.setHoursPerWeek(20);
+		emp4.setImageFile("johnlegend.jpg");
 		allEmployees.add(emp4);
 
 		return allEmployees;

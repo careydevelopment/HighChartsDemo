@@ -7,6 +7,7 @@ public class Employee {
 	private String lastName;
 	private String department;
 	private Integer hoursPerWeek;
+	private String imageFile;
 	
 	public String getEmployeeId() {
 		return employeeId;
@@ -38,4 +39,11 @@ public class Employee {
 	public void setHoursPerWeek(Integer hoursPerWeek) {
 		this.hoursPerWeek = hoursPerWeek;
 	}
+	public String getImageFile() {
+		return imageFile;
+	}
+	public void setImageFile(String imageFile) {
+		this.imageFile = imageFile;
+	}
+	
 }
