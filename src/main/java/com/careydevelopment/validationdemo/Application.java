@@ -1,4 +1,4 @@
-package com.careydevelopment.ajaxdemo;
+package com.careydevelopment.validationdemo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
