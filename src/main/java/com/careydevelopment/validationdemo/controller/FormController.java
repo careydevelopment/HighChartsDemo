@@ -29,15 +29,15 @@ public class FormController {
 	
 	@RequestMapping(value = "/form", method=RequestMethod.POST)
 	public String formSubmit(@Valid Employee employee, BindingResult bindingResult, Model model) {
-		System.err.println("I got here");
-		
-        if (bindingResult.hasErrors()) {
+		//check for errors
+		if (bindingResult.hasErrors()) {
             return "form";
         }
 		
-		return "redirect:/formSuccess";
+		//if there are no errors, show form success screen
+		return "formSuccess";
 	}
-	
+		
 	
 	//redirect to demo if user hits the root
 	@RequestMapping("/")
