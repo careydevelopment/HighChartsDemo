@@ -36,7 +36,7 @@
                                                      <label>First Name</label>                                                                
                                                      <div th:classappend="${#fields.hasErrors('firstName')} ? 'input-icon right' : ''">
                                                         <i th:if="${#fields.hasErrors('firstName')}" class="fa fa-exclamation tooltips" data-original-title="please enter a valid first name" data-container="body"></i>
-                                                     	<input type="text" class="form-control" maxlength="32" th:value="*{firstName}" th:field="*{firstName}" placeholder="Between 1 and 32 characters"/>
+                                                     	<input type="text" class="form-control" maxlength="32" th:field="*{firstName}" placeholder="Between 1 and 32 characters"/>
                                                      	<span th:if="${#fields.hasErrors('firstName')}" class="help-block" th:errors="*{firstName}"></span>
                                                      </div>
                                                  </div>                                                                                              
@@ -45,7 +45,7 @@
                                                      <label>Last Name</label>                                                                
                                                      <div th:classappend="${#fields.hasErrors('lastName')} ? 'input-icon right' : ''">
                                                         <i th:if="${#fields.hasErrors('lastName')}" class="fa fa-exclamation tooltips" data-original-title="please enter a valid last name" data-container="body"></i>
-                                                     	<input type="text" class="form-control" maxlength="32" th:value="*{lastName}" th:field="*{lastName}" placeholder="Between 1 and 32 characters"/>
+                                                     	<input type="text" class="form-control" maxlength="32" th:field="*{lastName}" placeholder="Between 1 and 32 characters"/>
                                                      	<span th:if="${#fields.hasErrors('lastName')}" class="help-block" th:errors="*{lastName}"></span>
                                                      </div>
                                                  </div>                                                 
@@ -54,7 +54,7 @@
                                                      <label>SSN</label>                                                                
                                                      <div th:classappend="${#fields.hasErrors('ssn')} ? 'input-icon right' : ''">
                                                         <i th:if="${#fields.hasErrors('ssn')}" class="fa fa-exclamation tooltips" data-original-title="please enter a valid ssn" data-container="body"></i>
-                                                     	<input type="text" class="form-control" maxlength="11" th:value="*{ssn}" th:field="*{ssn}" placeholder="Be sure to include dashes"/>
+                                                     	<input type="text" class="form-control" maxlength="11" th:field="*{ssn}" placeholder="Be sure to include dashes"/>
                                                      	<span th:if="${#fields.hasErrors('ssn')}" class="help-block" th:errors="*{ssn}"></span>
                                                      </div>
                                                  </div>
@@ -63,7 +63,7 @@
                                                      <label>Email Address</label>                                                                
                                                      <div th:classappend="${#fields.hasErrors('emailAddress')} ? 'input-icon right' : ''">
                                                         <i th:if="${#fields.hasErrors('emailAddress')}" class="fa fa-exclamation tooltips" data-original-title="please enter a valid email address" data-container="body"></i>
-                                                     	<input type="text" class="form-control" maxlength="64" th:value="*{emailAddress}" th:field="*{emailAddress}" placeholder="For example: joe@xyz.com"/>
+                                                     	<input type="text" class="form-control" maxlength="64" th:field="*{emailAddress}" placeholder="For example: joe@xyz.com"/>
                                                      	<span th:if="${#fields.hasErrors('emailAddress')}" class="help-block" th:errors="*{emailAddress}"></span>
                                                      </div>
                                                  </div>
@@ -72,7 +72,7 @@
                                                      <label>Hours Per Week</label>                                                                
                                                      <div th:classappend="${#fields.hasErrors('hoursPerWeek')} ? 'input-icon right' : ''">
                                                         <i th:if="${#fields.hasErrors('hoursPerWeek')}" class="fa fa-exclamation tooltips" data-original-title="please enter a valid number of hours per week" data-container="body"></i>
-                                                     	<input type="text" class="form-control" maxlength="2" th:value="*{hoursPerWeek}" th:field="*{hoursPerWeek}" placeholder="A number between 10 and 40"/>
+                                                     	<input type="text" class="form-control" maxlength="2" th:field="*{hoursPerWeek}" placeholder="A number between 10 and 40"/>
                                                      	<span th:if="${#fields.hasErrors('hoursPerWeek')}" class="help-block" th:errors="*{hoursPerWeek}"></span>
                                                      </div>
                                                  </div>
@@ -81,7 +81,7 @@
                                                      <label>Department</label>                                                                
                                                      <div th:classappend="${#fields.hasErrors('department')} ? 'input-icon right' : ''">
                                                         <i th:if="${#fields.hasErrors('department')}" class="fa fa-exclamation tooltips" data-original-title="please select a department" data-container="body"></i>
-                                                     	<select class="form-control" th:value="*{department}" th:field="*{department}">
+                                                     	<select class="form-control" th:field="*{department}">
                                                          	<option value="">-SELECT-</option>
                                                          	<option value="Accounting">Accounting</option>
                                                          	<option value="Finance">Finance</option>
