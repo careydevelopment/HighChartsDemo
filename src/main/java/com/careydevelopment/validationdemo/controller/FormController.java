@@ -13,35 +13,35 @@ import com.careydevelopmnet.validationdemo.model.Employee;
 @Controller
 public class FormController {
 
-	//starting page for form validation demo
-	@RequestMapping(value = "/form", method=RequestMethod.GET)
-	public String form(Model model) {
-		//instantiate an employee object
-		Employee employee = new Employee();
-		
-		//add it to the model
-		model.addAttribute("employee", employee);
-
-		//get out
-		return "form";
-	}
-
-	
-	@RequestMapping(value = "/form", method=RequestMethod.POST)
-	public String formSubmit(@Valid Employee employee, BindingResult bindingResult, Model model) {
-		//check for errors
-		if (bindingResult.hasErrors()) {
+    //starting page for form validation demo
+    @RequestMapping(value = "/form", method=RequestMethod.GET)
+    public String form(Model model) {
+        //instantiate an employee object
+        Employee employee = new Employee();
+    	
+        //add it to the model
+        model.addAttribute("employee", employee);
+    
+        //get out
+        return "form";
+    }
+    
+    
+    @RequestMapping(value = "/form", method=RequestMethod.POST)
+    public String formSubmit(@Valid Employee employee, BindingResult bindingResult, Model model) {
+        //check for errors
+        if (bindingResult.hasErrors()) {
             return "form";
         }
-		
-		//if there are no errors, show form success screen
-		return "formSuccess";
-	}
-		
-	
-	//redirect to demo if user hits the root
-	@RequestMapping("/")
-	public String home(Model model) {
-		return "redirect:form";
-	}
+    	
+        //if there are no errors, show form success screen
+        return "formSuccess";
+    }
+    	
+    
+    //redirect to demo if user hits the root
+    @RequestMapping("/")
+    public String home(Model model) {
+        return "redirect:form";
+    }
 }
