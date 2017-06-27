@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!--<![endif]-->
+
+    <head>
+        <title>HighCharts Demo | Carey Development Demos</title>
+        <meta content="This demo shows how to use HighCharts with Spring Boot" name="description" />
+        <object th:include="fragments/head :: head" th:remove="tag"></object>
+        
+        <link th:href="@{/assets/pages/css/profile.min.css}" rel="stylesheet" type="text/css" />
+    </head>
+    
+    <body class="page-container-bg-solid">
+        <div th:include="fragments/topmenuheader :: header"></div>
+        <div class="page-container">
+            <div class="page-content-wrapper">
+                <div class="page-head" style="background-color:#eff3f8;padding-top:40px">
+                    <div class="container">
+                        <div class="row" style="margin-bottom:30px">
+                            <div class="col-md-6">
+                                <h1>Sales: May - June</h1>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-bottom:30px">
+                            <div class="col-md-6" style="margin-top:20px">
+                                <div id="salesByType" style="width:100%; height:400px;"></div>
+                            </div>
+                            <div class="col-md-6" style="margin-top:20px">
+                                <div id="salesByRegion" style="width:100%; height:400px;"></div>
+                            </div>
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div th:include="fragments/homefooter :: footer"></div>
+        <script th:inline="javascript">
+        /*<![CDATA[*/
+            $(function () { 
+                Highcharts.setOptions({
+                    lang: {
+                        decimalPoint: '.',
+                        thousandsSep: ','
+                    }
+                });
+
+                drawSalesByTypeChart();
+				drawSalesByRegionChart();
+            });
+            
+            
+            function drawSalesByRegionChart() {
+                var salesByRegionChart = Highcharts.chart('salesByRegion', {
+                    chart: {
+                        type: 'pie',
+                        margin: 40,
+                        options3d: {
+                            enabled: true,
+                            alpha: 45,
+                            beta: 0
+                        }
+                    },
+                    title: {
+                        text: 'Sales by Region'
+                    },
+                    tooltip: {
+                      	pointFormat: "${point.y:,.0f}"
+                    },
+                    plotOptions: {
+                    	pie: {
+                    		allowPointSelect: true,
+                    		depth: 35
+                    	}
+                    },
+                    series: [{
+                        name: 'Regions',
+                        colorByPoint:true,
+                        data: [{
+                            name: 'Northeast',
+                            y: /*[[${northeastSales}]]*/ 0
+                        },{
+                            name: 'South',
+                            y: /*[[${southSales}]]*/ 0
+                        },{
+                            name: 'Midwest',
+                            y: /*[[${midwestSales}]]*/ 0
+                        },{
+                            name: 'West',
+                            y: /*[[${westSales}]]*/ 0
+                        }]
+                	}]
+                });
+            }
+            
+            function drawSalesByTypeChart() {
+                var salesByTypeChart = Highcharts.chart('salesByType', {
+                    chart: {
+                        type: 'column',
+                        margin: 75,
+                        options3d: {
+                			enabled: true,
+                        	alpha: 15,
+                        	beta: 15,
+                        	depth: 110
+                        }
+                    },
+                    title: {
+                        text: 'Sales by Lure Type'
+                    },
+                    xAxis: {
+                        categories: ['May', 'June', 'July']
+                    },
+                    yAxis: {
+                        title: {
+                            text: 'Sales (US $)'
+                        }
+                    },
+                    tooltip: {
+                      	pointFormat: "${point.y:,.0f}"
+                    },
+                    plotOptions: {
+                    	column: {
+                    		depth: 60,
+                      		stacking: true,
+                       		grouping: false,
+                      		groupZPadding: 10
+                        }
+                    },
+                    series: [{
+                        name: 'Inshore',
+                        data: /*[[${inshoreSales}]]*/ []
+                    }, {
+                        name: 'Nearshore',
+                        data: /*[[${nearshoreSales}]]*/ []
+                    }, {
+                        name: 'Offshore',
+                        data: /*[[${offshoreSales}]]*/ []
+                    }]
+                });
+            }
+            /*]]>*/
+        </script>        
+    </body>
+</html>
