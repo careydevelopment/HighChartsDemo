@@ -11,9 +11,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class ChartController {
 
-    //starting page for form validation demo
     @RequestMapping(value = "/chart", method=RequestMethod.GET)
-    public String form(Model model) {
+    public String chart(Model model) {
         
         //first, add the regional sales
         Integer northeastSales = 17089;
