@@ -1,4 +1,4 @@
-package com.careydevelopmnet.validationdemo.model;
+package com.careydevelopmnet.highchartsdemo.model;
 
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;

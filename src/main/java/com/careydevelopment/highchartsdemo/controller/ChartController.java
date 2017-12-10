@@ -1,4 +1,4 @@
-package com.careydevelopment.validationdemo.controller;
+package com.careydevelopment.highchartsdemo.controller;
 
 import java.util.Arrays;
 import java.util.List;
